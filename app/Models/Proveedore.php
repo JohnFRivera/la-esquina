@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Producto;
 
-class Proveedor extends Model
+class Proveedore extends Model
 {
     use HasFactory;
 

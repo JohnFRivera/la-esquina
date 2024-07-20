@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\DetalleVenta;
 use App\Models\Categoria;
-use App\Models\Proveedor;
+use App\Models\Proveedore;
 
 class Producto extends Model
 {
@@ -24,6 +24,6 @@ class Producto extends Model
     }
     public function proveedores()
     {
-        return $this->belongsTo(Proveedor::class, 'id_proveedor');
+        return $this->belongsTo(Proveedore::class, 'id_proveedor');
     }
 }
