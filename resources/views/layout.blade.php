@@ -5,15 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.8/datatables.min.css" rel="stylesheet">
     <title>La Esquina</title>
 </head>
 
-<body>
-    <header class="container-fluid bg-warning shadow">
+<body class="bg-body-secondary">
+    <header class="container-fluid bg-warning border-bottom border-secondary">
         <div class="row shadow-sm py-3 px-4">
             <div class="col">
-                <h1 class="fw-bold mb-0">Tienda La Esquina</h1>
+                <h1 class="fw-bold mb-0">
+                    <i class="bi bi-shop-window"></i>
+                    La Esquina
+                </h1>
             </div>
             <div class="col-auto align-content-center">
                 <a href="" class="btn btn-danger">Cerrar sesión</a>
@@ -41,7 +45,7 @@
             </nav>
         </div>
     </header>
-    <main class="container-sm py-2 py-md-4">
+    <main class="container-sm py-2 py-md-3">
         @yield('content')
     </main>
 

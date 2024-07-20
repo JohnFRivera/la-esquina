@@ -13,6 +13,16 @@ class CategoriaController extends Controller
         return view('categorias.index', compact('categorias'));
     }
 
+    public function edit(Categoria $categoria)
+    {
+        return view('categorias.edit', compact('categoria'));
+    }
+
+    public function show(Categoria $categoria)
+    {
+        return view('categorias.delete', compact('categoria'));
+    }
+
     public function store(Request $request)
     {
         $request->validate([
