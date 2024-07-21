@@ -13,34 +13,29 @@ class ProveedorController extends Controller
         return view('proveedores.index', compact('proveedores'));
     }
 
-    public function edit(Proveedore $proveedore)
-    {
-        return view('proveedores.edit', compact('proveedore'));
-    }
-
-    public function show(Proveedore $proveedore)
-    {
-        return view('proveedores.delete', compact('proveedore'));
-    }
-
     public function store(Request $request)
     {
         $request->validate([
-            'nombre' => 'required',
+            'nombres' => 'required',
             'telefono' => 'required',
         ]);
         Proveedore::create($request->all());
         return redirect()->route('proveedores.index');
     }
 
+    public function show(Proveedore $proveedore)
+    {
+        return view('proveedores.show', compact('proveedore'));
+    }
+
     public function update(Request $request, Proveedore $proveedore)
     {
         $request->validate([
-            'nombre' => 'required',
+            'nombres' => 'required',
             'telefono' => 'required',
         ]);
         $proveedore->update($request->all());
-        return redirect()->route('proveedores.index');
+        return redirect()->route('proveedores.show', compact('proveedore'));
     }
 
     public function destroy(Proveedore $proveedore)

@@ -18,17 +18,12 @@
             <div class="col">
                 <div class="bg-body-tertiary rounded-2 border shadow-sm p-3">
                     <div class="row">
-                        <div class="col fw-semibold text-truncate fs-5">
-                            {{ $categoria->descripcion }}
+                        <div class="col-10">
+                            <h4 class="text-truncate mb-0">{{ $categoria->descripcion }}</h4>
                         </div>
-                        <div class="col-auto align-content-center">
-                            <a href="{{ route('categorias.edit', $categoria) }}"
-                                class="link-primary text-decoration-none me-1">
-                                <i class="bi bi-pencil-square"></i>
-                            </a>
-                            <a href="{{ route('categorias.show', $categoria) }}"
-                                class="link-danger text-decoration-none">
-                                <i class="bi bi-trash-fill"></i>
+                        <div class="col-2 ms-auto">
+                            <a href="{{ route('categorias.show', $categoria) }}" class="link-dark link-opacity-50 link-opacity-100-hover text-decoration-none fs-5 mb-0">
+                                <i class="bi bi-gear-fill"></i>
                             </a>
                         </div>
                     </div>
@@ -51,7 +46,7 @@
                 </div>
                 <div class="modal-body">
                     <input type="text" name="descripcion" class="form-control form-control-lg"
-                        placeholder="Descripción..." required>
+                        placeholder="Descripción" required>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary me-auto" data-bs-dismiss="modal">Cerrar</button>

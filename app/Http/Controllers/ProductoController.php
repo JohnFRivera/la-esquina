@@ -4,23 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use App\Models\Categoria;
+use App\Models\Proveedore;
 
 class ProductoController extends Controller
 {
     public function index()
     {
         $productos = Producto::with(['categorias','proveedores'])->get();
-        return view('productos.index', compact('productos'));
-    }
-
-    public function edit(Producto $producto)
-    {
-        return view('productos.edit', compact('producto'));
-    }
-
-    public function show(Producto $producto)
-    {
-        return view('productos.delete', compact('producto'));
+        $categorias = Categoria::all();
+        $proveedores = Proveedore::all();
+        return view('productos.index', compact(['productos','categorias','proveedores']));
     }
 
     public function store(Request $request)
@@ -36,6 +30,13 @@ class ProductoController extends Controller
         return redirect()->route('productos.index');
     }
 
+    public function show(Producto $producto)
+    {
+        $categorias = Categoria::all();
+        $proveedores = Proveedore::all();
+        return view('productos.show', compact(['producto','categorias','proveedores']));
+    }
+
     public function update(Request $request, Producto $producto)
     {
         $request->validate([
@@ -46,7 +47,7 @@ class ProductoController extends Controller
             'precio' => 'required',
         ]);
         $producto->update($request->all());
-        return redirect()->route('productos.index');
+        return redirect()->route('productos.show');
     }
 
     public function destroy(Producto $producto)

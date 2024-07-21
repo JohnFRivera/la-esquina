@@ -13,16 +13,6 @@ class CategoriaController extends Controller
         return view('categorias.index', compact('categorias'));
     }
 
-    public function edit(Categoria $categoria)
-    {
-        return view('categorias.edit', compact('categoria'));
-    }
-
-    public function show(Categoria $categoria)
-    {
-        return view('categorias.delete', compact('categoria'));
-    }
-
     public function store(Request $request)
     {
         $request->validate([
@@ -32,13 +22,18 @@ class CategoriaController extends Controller
         return redirect()->route('categorias.index');
     }
 
+    public function show(Categoria $categoria)
+    {
+        return view('categorias.show', compact('categoria'));
+    }
+
     public function update(Request $request, Categoria $categoria)
     {
         $request->validate([
             'descripcion' => 'required',
         ]);
         $categoria->update($request->all());
-        return redirect()->route('categorias.index');
+        return redirect()->route('categorias.show', compact('categoria'));
     }
 
     public function destroy(Categoria $categoria)

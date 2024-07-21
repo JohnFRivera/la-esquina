@@ -16,7 +16,7 @@
         <div class="row py-3 px-4">
             <div class="col">
                 <h1 class="fw-bold mb-0">
-                    <i class="bi bi-shop-window"></i>
+                    <i class="bi bi-basket-fill"></i>
                     La Esquina
                 </h1>
             </div>
@@ -40,11 +40,11 @@
                             class="nav-link link-dark fw-semibold link-opacity-75 link-opacity-100-hover">Proveedores</a>
                     </li>
                     <li class="nav-item">
-                        <a href=""
+                        <a href="{{ route('empleados.index') }}"
                             class="nav-link link-dark fw-semibold link-opacity-75 link-opacity-100-hover">Empleados</a>
                     </li>
                     <li class="nav-item">
-                        <a href=""
+                        <a href="{{ route('ventas.create') }}"
                             class="nav-link link-dark fw-semibold link-opacity-75 link-opacity-100-hover">Ventas</a>
                     </li>
                 </ul>
