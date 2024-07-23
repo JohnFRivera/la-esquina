@@ -78,6 +78,7 @@
         <div class="modal-dialog">
             <form action="{{ route('productos.store') }}" method="POST" class="modal-content">
                 @csrf
+                @method('POST')
                 <div class="modal-header">
                     <h1 class="modal-title text-primary fs-5" id="myModalLabel">
                         <i class="bi bi-plus-lg me-2"></i>
@@ -93,7 +94,7 @@
                         @endforeach
                     </select>
                     <input type="text" name="nombre" class="form-control form-control-lg mb-2" placeholder="Nombre" required>
-                    <select name="" class="form-select form-select-lg mb-2" required>
+                    <select name="id_proveedor" class="form-select form-select-lg mb-2" required>
                         <option>Proveedor</option>
                         @foreach ($proveedores as $proveedore)
                             <option value="{{ $proveedore->id }}">{{ $proveedore->nombres }}</option>

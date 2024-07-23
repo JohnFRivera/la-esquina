@@ -7,4 +7,9 @@
             <h2 class="fw-bold mb-0">Ventas</h2>
         </div>
     </div>
+    <section class="row py-4">
+        <div class="col">
+            
+        </div>
+    </section>
 @endsection

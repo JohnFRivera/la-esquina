@@ -7,6 +7,10 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\VentasController;
 
+Route::get('/', function () {
+    return view('index');
+});
+
 Route::resource('categorias', CategoriaController::class);
 Route::resource('proveedores', ProveedorController::class);
 Route::resource('productos', ProductoController::class);
